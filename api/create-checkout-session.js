@@ -1,6 +1,4 @@
-import Stripe from "stripe";
-
-const stripe = new Stripe(process.env.sk_test_51SzknU9wpJuXQ1VczYfGc8JO7AFasgdfzPLahXCyRGno6J8WAwHetmkhLrAimyHmkZxZinvKSAKOinabDA3NSyrs00xLdeX541);
+const Stripe = require("stripe");
 
 const PRICE_BOOK = {
   "through-times-original": { name: "Through Times Journey — Original", amount: 22222 },
@@ -19,11 +17,21 @@ const PRICE_BOOK = {
   "red-flower-print": { name: "Red Flower — Print", amount: 5000 },
 };
 
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   try {
-    if (req.method !== "POST") {
-      return res.status(405).json({ error: "Method not allowed" });
+    // (Optional) If calling from GitHub Pages, keep these:
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    if (req.method === "OPTIONS") return res.status(200).end();
+    if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
+
+    if (!process.env.STRIPE_SECRET_KEY) {
+      return res.status(500).json({ error: "Missing STRIPE_SECRET_KEY in Vercel env vars" });
     }
+
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
     const { cart } = req.body || {};
     if (!cart || !Array.isArray(cart) || cart.length === 0) {
@@ -40,13 +48,12 @@ export default async function handler(req, res) {
         price_data: {
           currency: "usd",
           product_data: { name: product.name },
-          unit_amount: product.amount, // cents
+          unit_amount: product.amount,
         },
         quantity: qty,
       };
     });
 
-    // Use current site domain automatically
     const origin = req.headers.origin || `https://${req.headers.host}`;
 
     const session = await stripe.checkout.sessions.create({
@@ -58,6 +65,6 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ url: session.url });
   } catch (err) {
-    return res.status(400).json({ error: err.message });
+    return res.status(500).json({ error: err.message });
   }
-}
+};
