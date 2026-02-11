@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./Light pink and dark pink Vintage Elegant Flower Boutique Shop La Londe Logo.PNG" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Chika The Artist</title>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-top">
+      <a class="brand" href="#">
+        <img src="./Vector.png" alt="Chika The Artist">
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About me</a>
+        <a href="#shop">Shop</a>
+        <a class="is-active" href="#contact">Contact</a>
+        <a href="#shipping">Shipping and Delivery</a>
+
+        <!-- Cart in navbar (desktop) -->
+        <button class="cart-btn" type="button" aria-label="Open cart">
+          <img src="./cart.png" alt="Cart">
+          <span class="cart-count" aria-label="Cart item count">0</span>
+        </button>
+      </nav>
+
+      <!-- Right actions (mobile): cart + hamburger -->
+      <div class="hero-actions">
+        <button class="cart-btn cart-btn--mobile" type="button" aria-label="Open cart">
+          <img src="./cart.png" alt="Cart">
+          <span class="cart-count" aria-label="Cart item count">0</span>
+        </button>
+
+        <!-- Hamburger toggle (only shows on mobile) -->
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobileMenu" class="mobile-nav" aria-label="Mobile Primary">
+      <a href="#about">About me</a>
+      <a href="#shop">Shop</a>
+      <a href="#contact">Contact</a>
+      <a href="#shipping">Shipping and Delivery</a>
+    </nav>
+
+    <div class="hero-center">
+      <img src="./Vector.png" alt="Chika the Artist — ESTD 2025">
+    </div>
+
+    <div class="marquee" aria-label="New in shop marquee">
+      <div class="marquee-track">
+        <span>new in . shop&nbsp;</span><span>new in . shop&nbsp;</span><span>new in . shop&nbsp;</span>
+        <span>new in . shop&nbsp;</span><span>new in . shop&nbsp;</span><span>new in . shop&nbsp;</span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span>new in . shop&nbsp;</span><span>new in . shop&nbsp;</span><span>new in . shop&nbsp;</span>
+        <span>new in . shop&nbsp;</span><span>new in . shop&nbsp;</span><span>new in . shop&nbsp;</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="about" id="about">
+    <div class="about-left">
+      <h5 class="section-label">ABOUT ME</h5>
+
+      <div class="quote">
+        <p>“Art is how I express<br>what I don’t have words for — yet.”</p>
+      </div>
+    </div>
+
+    <div class="about-center">
+      <div class="portrait">
+        <img src="./IMG_4576.JPG" alt="Portrait of Chiza, artist and creative">
+      </div>
+    </div>
+
+    <div class="about-right">
+      <h2 class="about-title">
+        I’m Chiza, and I make art,<br>
+        super original — I know.
+      </h2>
+
+      <div class="about-text">
+        <p>Since i could remember creativity has always been something that has driven me, to an extent i feel like it was all i could look forward to in high school, weather it was singing,</p>
+        <p>Crocheting or making any art in general. when i started drawing i knew it was something that would become an escape for me and a different but freeing mode of expression</p>
+        <p>Multiple sketches, different modes of art expressions too many opinions, and the freedom to create new pieces no one thought they needed, and now i get to share it with you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="drops" id="shop">
+    <div class="drops-top">
+      <h2 class="drops-title">The latest drops</h2>
+      <!-- you can keep this decorative cart if you want -->
+      <img class="drops-cart" src="./cart.png" alt="Cart icon">
+    </div>
+
+    <!-- DROP 1 -->
+    <div class="drops-grid">
+      <aside class="drops-info">
+        <div class="drops-bubble">
+          <h3>THROUGH<br>TIMES<br>JOURNEY</h3>
+        </div>
+        <span class="drops-stem" aria-hidden="true"></span>
+        <p class="drops-desc">
+          Abstract original and print<br>
+          yarn and beads on canvas<br>
+          10 x 10 size and dimension<br>
+          $222.22 original<br>
+          $50.00 print
+        </p>
+      </aside>
+
+      <div class="drops-cards">
+        <article class="drop-card"
+          data-id="through-times-original"
+          data-name="Through Times Journey — Original"
+          data-price="222.22">
+          <h3 class="drop-tag">Original</h3>
+          <img src="./IMG_0104.jpeg" alt="Through Times Journey - Original">
+          <button class="add-to-cart" type="button">Add to cart</button>
+        </article>
+
+        <article class="drop-card"
+          data-id="through-times-print"
+          data-name="Through Times Journey — Print"
+          data-price="50.00">
+          <h3 class="drop-tag">Print</h3>
+          <img src="./IMG_0104.jpeg" alt="Through Times Journey - Print">
+          <button class="add-to-cart" type="button">Add to cart</button>
+        </article>
+      </div>
+    </div>
+
+    <!-- DROP 2 -->
+    <div class="drops-grid">
+      <aside class="drops-info">
+        <div class="drops-bubble">
+          <h3>CHERRY<br>BLOSSOMS</h3>
+        </div>
+        <span class="drops-stem" aria-hidden="true"></span>
+        <p class="drops-desc">
+          Abstract original and print<br>
+          yarn and beads on canvas<br>
+          10 x 10 size and dimension<br>
+          $222.22 original<br>
+          $50.00 print
+        </p>
+      </aside>
+
+      <div class="drops-cards">
+        <article class="drop-card"
+          data-id="cherry-blossoms-original"
+          data-name="Cherry Blossoms — Original"
+          data-price="222.22">
+          <h3 class="drop-tag">Original</h3>
+          <img src="./WhatsApp Image 2026-02-11 at 00.10.40 (9).jpeg" alt="Cherry Blossoms - Original">
+          <button class="add-to-cart" type="button">Add to cart</button>
+        </article>
+
+        <article class="drop-card"
+          data-id="cherry-blossoms-print"
+          data-name="Cherry Blossoms — Print"
+          data-price="50.00">
+          <h3 class="drop-tag">Print</h3>
+          <img src="./WhatsApp Image 2026-02-11 at 00.10.41.jpeg" alt="Cherry Blossoms - Print">
+          <button class="add-to-cart" type="button">Add to cart</button>
+        </article>
+      </div>
+    </div>
+
+    <!-- DROP 3 -->
+    <div class="drops-grid">
+      <aside class="drops-info">
+        <div class="drops-bubble">
+          <h3>ORCHIDS<br>ESSENCE</h3>
+        </div>
+        <span class="drops-stem" aria-hidden="true"></span>
+        <p class="drops-desc">
+          Abstract original and print<br>
+          yarn and beads on canvas<br>
+          8 x 8 size and dimension<br>
+          $222.22 original<br>
+          $50.00 print
+        </p>
+      </aside>
+
+      <div class="drops-cards">
+        <article class="drop-card"
+          data-id="orchids-essence-original"
+          data-name="Orchids Essence — Original"
+          data-price="222.22">
+          <h3 class="drop-tag">Original</h3>
+          <img src="./WhatsApp Image 2026-02-11 at 00.10.40 (6).jpeg" alt="Orchids Essence - Original">
+          <button class="add-to-cart" type="button">Add to cart</button>
+        </article>
+
+        <article class="drop-card"
+          data-id="orchids-essence-print"
+          data-name="Orchids Essence — Print"
+          data-price="50.00">
+          <h3 class="drop-tag">Print</h3>
+          <img src="./WhatsApp Image 2026-02-11 at 00.10.40 (10).jpeg" alt="Orchids Essence - Print">
+          <button class="add-to-cart" type="button">Add to cart</button>
+        </article>
+      </div>
+    </div>
+
+    <!-- DROP 4 -->
+    <div class="drops-grid">
+      <aside class="drops-info">
+        <div class="drops-bubble">
+          <h3>SMOKING<br>KILLS</h3>
+        </div>
+        <span class="drops-stem" aria-hidden="true"></span>
+        <p class="drops-desc">
+          Abstract original and print<br>
+          yarn and beads on canvas<br>
+          10 x 10 size and dimension<br>
+          $222.22 original<br>
+          $50.00 print
+        </p>
+      </aside>
+
+      <div class="drops-cards">
+        <article class="drop-card"
+          data-id="smoking-kills-original"
+          data-name="Smoking Kills — Original"
+          data-price="222.22">
+          <h3 class="drop-tag">Original</h3>
+          <img src="./WhatsApp Image 2026-02-11 at 00.10.40 (5).jpeg" alt="Smoking Kills - Original">
+          <button class="add-to-cart" type="button">Add to cart</button>
+        </article>
+
+        <article class="drop-card"
+          data-id="smoking-kills-print"
+          data-name="Smoking Kills — Print"
+          data-price="50.00">
+          <h3 class="drop-tag">Print</h3>
+          <img src="./WhatsApp Image 2026-02-11 at 00.10.40 (4).jpeg" alt="Smoking Kills - Print">
+          <button class="add-to-cart" type="button">Add to cart</button>
+        </article>
+      </div>
+    </div>
+
+    <!-- DROP 5 -->
+    <div class="drops-grid">
+      <aside class="drops-info">
+        <div class="drops-bubble">
+          <h3>RED<br>FLOWER</h3>
+        </div>
+        <span class="drops-stem" aria-hidden="true"></span>
+        <p class="drops-desc">
+          Abstract original and print<br>
+          yarn and beads on canvas<br>
+          8 x 8 size and dimension<br>
+          $222.22 original<br>
+          $50.00 print
+        </p>
+      </aside>
+
+      <div class="drops-cards">
+        <article class="drop-card"
+          data-id="red-flower-original"
+          data-name="Red Flower — Original"
+          data-price="222.22">
+          <h3 class="drop-tag">Original</h3>
+          <img src="./WhatsApp Image 2026-02-11 at 00.10.40 (3).jpeg" alt="Red Flower - Original">
+          <button class="add-to-cart" type="button">Add to cart</button>
+        </article>
+
+        <article class="drop-card"
+          data-id="red-flower-print"
+          data-name="Red Flower — Print"
+          data-price="50.00">
+          <h3 class="drop-tag">Print</h3>
+          <img src="./WhatsApp Image 2026-02-11 at 00.10.40 (1).jpeg" alt="Red Flower - Print">
+          <button class="add-to-cart" type="button">Add to cart</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="shipping" id="shipping">
+    <div class="shipping-inner">
+      <h2 class="shipping-title">Shipping and Delivery</h2>
+
+      <div class="shipping-top">
+        <a href="./request.html" class="address-link">Send a Request</a>
+
+        <div class="shipping-visuals">
+          <div class="img-wrap center">
+            <img src="./computer.png" alt="Vintage computer illustration" class="shipping-img" />
+            <span class="drop-line" aria-hidden="true"></span>
+          </div>
+
+          <div class="img-wrap right">
+            <img src="./box.png" alt="Package illustration" class="shipping-img" />
+            <span class="drop-line" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="shipping-steps">
+        <div class="step"><p><strong>Submit a Request</strong> — Fill out the commission form or contact me directly with your concept, size, and style preferences.</p></div>
+        <div class="step"><p><strong>Consultation & Quote</strong> — I’ll review your request and provide a price estimate, timeline, and any design suggestions.</p></div>
+        <div class="step"><p><strong>Deposit & Start</strong> — Once the deposit (typically 50%) is received, I’ll begin your project and send progress updates.</p></div>
+        <div class="step"><p><strong>Final Approval</strong> — You’ll have a chance to review the completed work before final payment.</p></div>
+        <div class="step"><p><strong>Delivery</strong> — Once approved, I’ll deliver your artwork in the requested format (digital file or physical print). Depending on your location, delivery may take 1–2 weeks to 6–8 weeks.</p></div>
+      </div>
+
+      <p class="shipping-note">
+        Commissions Might Take Longer Time To Create<br />
+        Depending On The Piece
+      </p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-top">
+      <div class="contact-left">
+        <h2 class="contact-label">contact</h2>
+
+        <p class="contact-intro">
+          i want to share a<br>
+          piece of my<br>
+          creativity with<br>
+          you.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:youremail@example.com">email</a>
+          <a href="https://instagram.com/yourhandle" target="_blank" rel="noreferrer">instagram</a>
+        </div>
+      </div>
+
+      <img class="contact-phone" src="./phone.png" alt="Vintage phone illustration">
+
+      <div class="contact-right">
+        <h2 class="contact-hit">Hit me up!</h2>
+
+        <div class="contact-right-stack">
+          <span class="contact-line" aria-hidden="true"></span>
+          <img class="contact-computer" src="./computer.png" alt="Computer illustration">
+
+          <div class="contact-bubble">
+            <p>i’m always available<br>to create new<br>experiences for you</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-bottom">
+      <img src="./chikatext.png" alt="Chika The Artist" class="contact-brand-img">
+    </div>
+  </section>
+
+  <!-- CART OVERLAY + DRAWER -->
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your cart</h3>
+      <button class="cart-close" id="cartClose" type="button" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+
+      <button class="checkout-btn" id="checkoutBtn" type="button" disabled>
+        Checkout (Stripe)
+      </button>
+
+      <p class="cart-note">
+        (Stripe needs a secure backend endpoint. I can plug it in next.)
+      </p>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

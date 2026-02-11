@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./Light pink and dark pink Vintage Elegant Flower Boutique Shop La Londe Logo.PNG">
+  <title>Send a Request</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<section class="request">
+  <div class="request-inner">
+    <a class="back-link" href="./index.html">← Back</a>
+
+    <h1 class="request-title">Send a Request</h1>
+    <p class="request-subtitle">Tell me what you want and I’ll respond with a quote + timeline.</p>
+
+    <form class="request-form" id="requestForm" novalidate>
+      <div class="grid">
+        <label>
+          Full Name
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@email.com" required />
+        </label>
+
+        <label>
+          Phone (optional)
+          <input type="tel" name="phone" placeholder="+1..." />
+        </label>
+
+        <label>
+          Preferred Format
+          <select name="format" required>
+            <option value="" selected disabled>Select</option>
+            <option>Digital file</option>
+            <option>Physical print</option>
+            <option>Both</option>
+          </select>
+        </label>
+      </div>
+
+      <label>
+        Concept / Description
+        <textarea name="concept" rows="5" placeholder="Describe the idea, theme, references, vibe..." required></textarea>
+      </label>
+
+      <div class="grid">
+        <label>
+          Size (optional)
+          <input type="text" name="size" placeholder="e.g. 10x10in, 8x8in" />
+        </label>
+
+        <label>
+          Style Preference (optional)
+          <input type="text" name="style" placeholder="e.g. playful, minimal, bold, vintage..." />
+        </label>
+
+        <label>
+          Timeline (optional)
+          <input type="text" name="timeline" placeholder="e.g. 2 weeks / before March 10" />
+        </label>
+
+        <label>
+          Budget Range (optional)
+          <input type="text" name="budget" placeholder="e.g. $50–$300" />
+        </label>
+      </div>
+
+      <label class="file">
+        Attach reference (optional)
+        <input type="file" name="ref" />
+      </label>
+
+      <button type="submit" class="submit-btn">Submit Request</button>
+
+      <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      <p class="small-note">
+      </p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('requestForm');
+  const note = document.getElementById('formNote');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    note.textContent = "";
+
+    const required = form.querySelectorAll('[required]');
+    let ok = true;
+
+    required.forEach((field) => {
+      if (!field.value.trim()) {
+        ok = false;
+        field.classList.add('input-error');
+      } else {
+        field.classList.remove('input-error');
+      }
+    });
+
+    if (!ok) {
+      note.textContent = "Please fill in the required fields.";
+      return;
+    }
+
+    note.textContent = "Request submitted (demo). Connect a backend to receive messages.";
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
