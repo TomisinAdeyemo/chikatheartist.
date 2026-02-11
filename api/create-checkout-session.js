@@ -27,11 +27,11 @@ module.exports = async (req, res) => {
     if (req.method === "OPTIONS") return res.status(200).end();
     if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
-    if (!process.env.STRIPE_SECRET_KEY) {
-      return res.status(500).json({ error: "Missing STRIPE_SECRET_KEY in Vercel env vars" });
+    if (!process.env.sk_test_51SzknU9wpJuXQ1VczYfGc8JO7AFasgdfzPLahXCyRGno6J8WAwHetmkhLrAimyHmkZxZinvKSAKOinabDA3NSyrs00xLdeX541) {
+      return res.status(500).json({ error: "Missing sk_test_51SzknU9wpJuXQ1VczYfGc8JO7AFasgdfzPLahXCyRGno6J8WAwHetmkhLrAimyHmkZxZinvKSAKOinabDA3NSyrs00xLdeX541 in Vercel env vars" });
     }
 
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+    const stripe = new Stripe(process.env.sk_test_51SzknU9wpJuXQ1VczYfGc8JO7AFasgdfzPLahXCyRGno6J8WAwHetmkhLrAimyHmkZxZinvKSAKOinabDA3NSyrs00xLdeX541);
 
     const { cart } = req.body || {};
     if (!cart || !Array.isArray(cart) || cart.length === 0) {
