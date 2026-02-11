@@ -19,7 +19,6 @@ menu?.querySelectorAll("a").forEach((a) => {
   });
 });
 
-
 // ===================== CART LOGIC =====================
 const CART_KEY = "chika_cart_v1";
 const currencySymbol = "$";
@@ -71,7 +70,6 @@ function setQty(id, qty) {
   renderCart();
 }
 
-
 // ===================== CART UI =====================
 const cartBtns = document.querySelectorAll(".cart-btn");
 const cartCountEls = document.querySelectorAll(".cart-count");
@@ -110,12 +108,12 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && cartDrawer?.classList.contains("is-open")) closeCart();
 });
 
-// Add-to-cart buttons (event delegation so it works even if you add more cards later)
+// Add-to-cart buttons (event delegation)
 document.addEventListener("click", (e) => {
-  const btn = e.target.closest(".add-to-cart");
-  if (!btn) return;
+  const addBtn = e.target.closest(".add-to-cart");
+  if (!addBtn) return;
 
-  const card = btn.closest(".drop-card");
+  const card = addBtn.closest(".drop-card");
   if (!card) return;
 
   addToCart({
@@ -193,9 +191,7 @@ function renderCart() {
   });
 }
 
-
 // ===================== STRIPE (VERCEL) =====================
-// Your Vercel serverless function will live at /api/create-checkout-session
 checkoutBtn?.addEventListener("click", async () => {
   const cart = getCart();
 
@@ -204,9 +200,10 @@ checkoutBtn?.addEventListener("click", async () => {
     return;
   }
 
+  const originalText = checkoutBtn.textContent;
+
   try {
     checkoutBtn.disabled = true;
-    const originalText = checkoutBtn.textContent;
     checkoutBtn.textContent = "Redirecting...";
 
     const res = await fetch("/api/create-checkout-session", {
@@ -215,16 +212,27 @@ checkoutBtn?.addEventListener("click", async () => {
       body: JSON.stringify({ cart }),
     });
 
-    const data = await res.json();
+    const text = await res.text();
+    let data;
+
+    try {
+      data = JSON.parse(text);
+    } catch {
+      console.error("Non-JSON response from API:", text);
+      throw new Error("Checkout API returned non-JSON. Check Vercel Function logs.");
+    }
+
     if (!res.ok) throw new Error(data.error || "Checkout failed");
+    if (!data.url) throw new Error("No Stripe Checkout URL returned.");
 
     window.location.href = data.url;
   } catch (err) {
+    console.error(err);
     alert(err.message);
     checkoutBtn.disabled = false;
-    checkoutBtn.textContent = "Checkout (Stripe)";
+    checkoutBtn.textContent = originalText;
   }
 });
 
+// Initial render
 renderCart();
-
