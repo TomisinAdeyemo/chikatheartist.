@@ -313,7 +313,7 @@ body {
 }
 
 .brand img{
-  width:220px;
+  width:150px;
   height:auto;
   display:block;
 }
@@ -473,7 +473,7 @@ body {
     padding: 10px 12px;
   }
 
-  .brand img { width: 180px; }
+  .brand img { width: 130px; }
   .marquee-track span { font-size: 38px; }
 }
 
