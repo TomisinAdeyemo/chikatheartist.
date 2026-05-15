@@ -15,6 +15,18 @@ const PRICE_BOOK = {
 
   "red-flower-original": { name: "Red Flower — Original", amount: 22222 },
   "red-flower-print": { name: "Red Flower — Print", amount: 5000 },
+
+   "Space Man-original": { name: "Space Man — Original", amount: 22222 },
+  "Space Man-print": { name: "Space Man — Print", amount: 5000 },
+
+  "olives-original": { name: "Olives — Original", amount: 22222 },
+  "Olives-print": { name: "Olives — Print", amount: 5000 },
+
+  "Pom Poms-original": { name: "Pom Poms — Original", amount: 22222 },
+  "Pom Poms-print": { name: "Pom Poms — Print", amount: 5000 },
+
+  "Coraline Eyes-original": { name: "Coraline Eyes — Original", amount: 22222 },
+  "Coraline Eyes-print": { name: "Coraline Eyes — Print", amount: 5000 },
 };
 
 module.exports = async (req, res) => {
